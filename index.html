@@ -246,9 +246,10 @@
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a>,</span>
+                  <!-- <sup>*</sup> -->
                   <span class="author-block">
                     <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
                   </span>
@@ -258,7 +259,7 @@
                     <!-- TODO: Replace with your institution and conference/journal info -->
                     <span class="author-block">Institution Name<br>Conference name and year</span>
                     <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -342,13 +343,13 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            As robots become increasingly integrated into open-world, human-centered environments, their ability to interpret natural language instructions and adhere to safety constraints is critical for effective and trustworthy interaction. 
+            <b>As robots become increasingly integrated into open-world, human-centered environments, their ability to interpret natural language instructions and adhere to safety constraints is critical for effective and trustworthy interaction. 
 Existing approaches often focus on mapping language to reward functions instead of safety specifications or address only narrow constraint classes (e.g., obstacle avoidance), limiting their robustness and applicability. 
 We propose a modular framework for language-conditioned safety 
 in robot navigation.
 Our framework is composed of three core components: (1) a large language model (LLM)-based module that translates free-form instructions into structured safety specifications, (2) a perception module that grounds these specifications by maintaining object-level 3D representations of the environment, and (3) a model predictive control (MPC)-based safety filter that enforces both semantic and geometric constraints in real time. 
 We evaluate the effectiveness of the proposed framework through both simulation studies and hardware experiments, demonstrating that it robustly interprets and enforces diverse language-specified constraints across a wide range of environments and scenarios.
-
+</b>
           </p>
         </div>
       </div>
@@ -365,33 +366,40 @@ We evaluate the effectiveness of the proposed framework through both simulation 
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <img src="static/images/1.png" alt="First research result visualization" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Our proposed language-conditioned filter safeguards the robot against semantic constraint violations while completing navigation tasks. Red dotted lines indicate nominal (shortest) paths, and green lines denote filtered trajectories.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <img src="static/images/2.png" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          Framework Overview. Language instructions are parsed by an LLM into safety configurations, grounded via the perception module, and enforced by a sampling-based safety filter.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <img src="static/images/3.png" alt="Third research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+         Qualitative results. Left: our method follows language instructions and reaches the goal, while Safe-Geom violates semantic constraints. Right: Safe-Lang tends to produce overly conservative semantic failure sets, hindering task completion.
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <img src="static/images/4.png" alt="Fourth research result visualization" loading="lazy"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        An example of human-LLM interaction for parsing ambiguous instructions and reject unrealistic instructions.
       </h2>
     </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/5.png" alt="Fifth research result visualization" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Hardware experiment in a cluttered office. The robot reaches the goal while respecting semantic constraints with our method. Semantic failure sets from our method and Safe-Lang are shown in blue and purple, respectively.
+      </h2>
+     </div>
   </div>
 </div>
 </div>
